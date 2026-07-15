@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fikih Kelas IX | MTsS Diniyah Limo Jurai</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Playfair Display (Luxury Serif) & Inter (Modern Sans) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome untuk Ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        luxury: {
+                            900: '#064E3B', // Emerald gelap
+                            800: '#065F46',
+                            gold: '#D4AF37', // Emas klasik
+                            goldLight: '#F3E5AB',
+                            cream: '#FAF9F6', // Off-white mewah
+                            dark: '#1C1917', // Stone gelap
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Inter"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .text-gold-gradient {
+            background: linear-gradient(to right, #B8860B, #D4AF37, #F3E5AB, #D4AF37, #B8860B);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+            animation: shine 5s linear infinite;
+        }
+        @keyframes shine {
+            to {
+                background-position: 200% center;
+            }
+        }
+        .book-shadow {
+            box-shadow: 20px 20px 60px #d1d5db, -20px -20px 60px #ffffff;
+        }
+    </style>
+</head>
+<body class="bg-luxury-cream text-luxury-dark font-sans antialiased">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 glass-effect border-b border-luxury-gold/20 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center gap-3">
+                    <i class="fa-solid fa-book-quran text-3xl text-luxury-gold"></i>
+                    <span class="font-serif text-2xl font-bold text-luxury-900 tracking-wide">Fikih<span class="text-luxury-gold">IX</span></span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#tentang" class="text-luxury-900 hover:text-luxury-gold font-medium transition">Tentang Buku</a>
+                    <a href="#isi" class="text-luxury-900 hover:text-luxury-gold font-medium transition">Kurikulum 16 Pertemuan</a>
+                    <a href="#penulis" class="text-luxury-900 hover:text-luxury-gold font-medium transition">Penulis</a>
+                    <a href="#referensi" class="text-luxury-900 hover:text-luxury-gold font-medium transition">Referensi</a>
+                </div>
+                <a href="mailto:ummisalwa82@gmail.com" class="bg-luxury-900 text-luxury-gold px-6 py-2 rounded-full font-medium hover:bg-luxury-800 transition shadow-lg border border-luxury-gold/30">
+                    Hubungi Penulis
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-luxury-gold/10 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-luxury-900/10 rounded-full blur-3xl"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8">
+                    <div class="inline-block px-4 py-1 rounded-full bg-luxury-gold/10 border border-luxury-gold/30 text-luxury-900 text-sm font-semibold tracking-wider uppercase">
+                        Edisi Premium Kurikulum Merdeka & KSKK
+                    </div>
+                    <h1 class="font-serif text-5xl lg:text-7xl font-bold text-luxury-900 leading-tight">
+                        Fikih Kelas <span class="text-gold-gradient">IX</span>
+                    </h1>
+                    <p class="text-xl text-gray-600 leading-relaxed max-w-lg">
+                        Panduan komprehensif, moderat, dan mendalam tentang Fikih Muamalah dan Ibadah untuk siswa MTs. Mengintegrasikan dalil naqli, analisis kasus kontemporer, dan nilai-nilai akhlakul karimah.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#isi" class="bg-luxury-900 text-white px-8 py-4 rounded-lg font-semibold text-center hover:bg-luxury-800 transition shadow-xl border border-luxury-gold/20 flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-book-open"></i> Jelajahi Isi Buku
+                        </a>
+                        <a href="mailto:ummisalwa82@gmail.com" class="bg-white text-luxury-900 border-2 border-luxury-900 px-8 py-4 rounded-lg font-semibold text-center hover:bg-luxury-cream transition flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-envelope"></i> Minta Sampel Bab
+                        </a>
+                    </div>
+                    <div class="flex items-center gap-4 pt-4 border-t border-gray-200">
+                        <div class="text-sm">
+                            <p class="font-bold text-luxury-900">Maria Ulfa, M.A.</p>
+                            <p class="text-gray-500">MTsS Diniyah Limo Jurai</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Book Cover Placeholder -->
+                <div class="relative flex justify-center lg:justify-end">
+                    <div class="relative w-72 lg:w-96 aspect-[3/4] bg-gradient-to-br from-luxury-900 to-black rounded-r-2xl rounded-l-sm book-shadow transform rotate-y-12 hover:rotate-0 transition duration-500 border-l-4 border-luxury-gold">
+                        <!-- GANTI FILE INI DENGAN COVER BUKU ANDA -->
+                        <img src="cover-buku.png" alt="Cover Buku Fikih Kelas IX" class="w-full h-full object-cover rounded-r-2xl rounded-l-sm opacity-90 hover:opacity-100 transition" onerror="this.src='https://placehold.co/600x800/064E3B/D4AF37?text=COVER+BUKU+FIKIH+IX'">
+                        
+                        <div class="absolute bottom-6 left-6 right-6 text-white">
+                            <div class="h-1 w-12 bg-luxury-gold mb-3"></div>
+                            <p class="font-serif text-2xl font-bold">Fikih Kelas IX</p>
+                            <p class="text-sm text-luxury-goldLight mt-1">Maria Ulfa, M.A.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Isi Buku / Kurikulum Section -->
+    <section id="isi" class="py-20 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-4xl font-bold text-luxury-900 mb-4">Kurikulum 16 Pertemuan</h2>
+                <div class="w-24 h-1 bg-luxury-gold mx-auto rounded-full"></div>
+                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">Materi disusun secara sistematis dengan pendekatan analitis, dilengkapi studi kasus, tabel perbandingan, dan tautan video pembelajaran interaktif.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- BAB 1 -->
+                <div class="group bg-luxury-cream rounded-2xl p-8 border border-gray-100 hover:border-luxury-gold/50 hover:shadow-2xl transition duration-300">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="bg-luxury-900 text-luxury-gold text-xs font-bold px-3 py-1 rounded-full">Pertemuan 1</span>
+                        <a href="1.html" target="_blank" class="text-gray-400 hover:text-luxury-gold transition" title="Buka Bab 1"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold text-luxury-900 mb-3">Penyembelihan</h3>
+                    <p class="text-gray-600 text-sm mb-4 leading-relaxed">
+                        Membahas definisi, dasar hukum (QS. Al-Maidah: 3), rukun, dan syarat penyembelihan. Dilengkapi analisis <em>maqdur alaih</em> vs <em>ghairu maqdur alaih</em> serta etika penyembelihan mekanik modern yang tetap memenuhi syariat.
+                    </p>
+                    <div class="bg-white p-3 rounded-lg border-l-2 border-luxury-gold mb-4">
+                        <p class="text-xs text-gray-500 font-semibold uppercase mb-1">Studi Kasus</p>
+                        <p class="text-sm text-gray-700">Hukum menyembelih hewan yang sakit parah (sekarat) dan penggunaan alat tajam non-logam dalam kondisi darurat.</p>
+                    </div>
+                    <button onclick="openVideo('dQw4w9WgXcQ')" class="w-full flex items-center justify-center gap-2 bg-red-50 text-red-600 py-2 rounded-lg hover:bg-red-100 transition text-sm font-semibold">
+                        <i class="fa-brands fa-youtube"></i> Tonton Video: Tata Cara Penyembelihan
+                    </button>
+                </div>
+
+                <!-- BAB 2 -->
+                <div class="group bg-luxury-cream rounded-2xl p-8 border border-gray-100 hover:border-luxury-gold/50 hover:shadow-2xl transition duration-300">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="bg-luxury-900 text-luxury-gold text-xs font-bold px-3 py-1 rounded-full">Pertemuan 2</span>
+                        <a href="2.html" target="_blank" class="text-gray-400 hover:text-luxury-gold transition" title="Buka Bab 2"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold text-luxury-900 mb-3">Kurban</h3>
+                    <p class="text-gray-600 text-sm mb-4 leading-relaxed">
+                        Eksplorasi hukum (Sunnah Mu'akkad vs Wajib Nazar), syarat hewan (usia dan bebas cacat), serta waktu penyembelihan (10-13 Zulhijjah). 
+                    </p>
+                    <div class="bg-white p-3 rounded-lg border-l-2 border-luxury-gold mb-4">
+                        <p class="text-xs text-gray-500 font-semibold uppercase mb-1">Tabel Analisis</p>
+                        <p class="text-sm text-gray-700">Perbandingan mendetail: Kurban vs Akikah (Waktu, Jumlah Hewan, Kondisi Daging, dan Tujuan Syar'i).</p>
+                    </div>
+                    <button onclick="openVideo('dQw4w9WgXcQ')" class="w-full flex items-center justify-center gap-2 bg-red-50 text-red-600 py-2 rounded-lg hover:bg-red-100 transition text-sm font-semibold">
+                        <i class="fa-brands fa-youtube"></i> Tonton Video: Simulasi Penyembelihan Kurban
+                    </button>
+                </div>
+
+                <!-- BAB 3 -->
+                <div class="group bg-luxury-cream rounded-2xl p-8 border border-gray-100 hover:border-luxury-gold/50 hover:shadow-2xl transition duration-300">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="bg-luxury-900 text-luxury-gold text-xs font-bold px-3 py-1 rounded-full">Pertemuan 3</span>
+                        <a href="3.html" target="_blank" class="text-gray-400 hover:text-luxury-gold transition" title="Buka Bab 3"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold text-luxury-900 mb-3">Akikah</h3>
+                    <p class="text-gray-600 text-sm mb-4 leading-relaxed">
+                        Makna syukur atas kelahiran, hukum (Sunnah Mu'akkad), ketentuan 2 kambing untuk laki-laki dan 1 untuk perempuan, serta sunnah mencukur rambut dan bersedekah seberat timbangan rambut.
+                    </p>
+                    <div class="bg-white p-3 rounded-lg border-l-2 border-luxury-gold mb-4">
+                        <p class="text-xs text-gray-500 font-semibold uppercase mb-1">Studi Kasus</p>
+                        <p class="text-sm text-gray-700">Bolehkah orang dewasa mengakikahi dirinya sendiri jika orang tua tidak mampu saat ia bayi? (Analisis pendapat Imam Ahmad dan Syafi'i).</p>
+                    </div>
+                    <button onclick="openVideo('dQw4w9WgXcQ')" class="w-full flex items-center justify-center gap-2 bg-red-50 text-red-600 py-2 rounded-lg hover:bg-red-100 transition text-sm font-semibold">
+                        <i class="fa-brands fa-youtube"></i> Tonton Video: Prosesi Akikah
+                    </button>
+                </div>
+
+                <!-- BAB 4 -->
+                <div class="group bg-luxury-cream rounded-2xl p-8 border border-gray-100 hover:border-luxury-gold/50 hover:shadow-2xl transition duration-300">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="bg-luxury-900 text-luxury-gold text-xs font-bold px-3 py-1 rounded-full">Pertemuan 4</span>
+                        <a href="4.html" target="_blank" class="text-gray-400 hover:text-luxury-gold transition" title="Buka Bab 4"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold text-luxury-900 mb-3">Jual Beli</h3>
+                    <p class="text-gray-600 text-sm mb-4 leading-relaxed">
+                        Rukun dan syarat akad, objek jual beli, serta larangan jual beli yang mengandung <em>gharar</em> (ketidakjelasan), seperti jual beli sistem ijon atau barang yang belum dimiliki.
+                    </p>
+                    <div class="bg-white p-3 rounded-lg border-l-2 border-luxury-gold mb-4">
+                        <p class="text-xs text-gray-500 font-semibold uppercase mb-1">Studi Kasus</p>
+                        <p class="text-sm text-gray-700">Analisis hukum <em>Cash on Delivery</em> (COD) dan <em>Dropshipping</em> dalam perspektif Fikih Muamalah kontemporer.</p>
+                    </div>
+                    <button onclick="openVideo('dQw4w9WgXcQ')" class="w-full flex items-center justify-center gap-2 bg-red-50 text-red-600 py-2 rounded-lg hover:bg-red-100 transition text-sm font-semibold">
+                        <i class="fa-brands fa-youtube"></i> Tonton Video: Rukun Jual Beli
+                    </button>
+                </div>
+
+                <!-- BAB 5 -->
+                <div class="group bg-luxury-cream rounded-2xl p-8 border border-gray-100 hover:border-luxury-gold/50 hover:shadow-2xl transition duration-300">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="bg-luxury-900 text-luxury-gold text-xs font-bold px-3 py-1 rounded-full">Pertemuan 5</span>
+                        <a href="5.html" target="_blank" class="text-gray-400 hover:text-luxury-gold transition" title="Buka Bab 5"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold text-luxury-900 mb-3">Khiyar</h3>
+                    <p class="text-gray-600 text-sm mb-4 leading-relaxed">
+                        Hak memilih untuk melanjutkan atau membatalkan akad. Membahas Khiyar Majelis, Khiyar Syarat, Khiyar Aibi (cacat), dan Khiyar Ru'yah (belum melihat barang).
+                    </p>
+                    <div class="bg-white p-3 rounded-lg border-l-2 border-luxury-gold mb-4">
+                        <p class="text-xs text-gray-500 font-semibold uppercase mb-1">Tabel Analisis</p>
+                        <p class="text-sm text-gray-700">Matriks perbandingan 4 jenis Khiyar: Definisi, Waktu Berlaku, dan Contoh Penerapan di E-Commerce.</p>
+                    </div>
+                    <button onclick="openVideo('dQw4w9WgXcQ')" class="w-full flex items-center justify-center gap-2 bg-red-50 text-red-600 py-2 rounded-lg hover:bg-red-100 transition text-sm font-semibold">
+                        <i class="fa-brands fa-youtube"></i> Tonton Video: Praktik Khiyar
+                    </button>
+                </div>
+
+                <!-- BAB 6 -->
+                <div class="group bg-luxury-cream rounded-2xl p-8 border border-gray-100 hover:border-luxury-gold/50 hover:shadow-2xl transition duration-300">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="bg-luxury-900 text-luxury-gold text-xs font-bold px-3 py-1 rounded-full">Pertemuan 6</span>
+                        <a href="6.html" target="_blank" class="text-gray-400 hover:text-luxury-gold transition" title="Buka Bab 6"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold text-luxury-900 mb-3">Qirad (Mudharabah)</h3>
+                    <p class="text-gray-600 text-sm mb-4 leading-relaxed">
+                        Akad kerjasama usaha antara pemilik modal (<em>sahibul mal</em>) dan pengelola (<em>mudharib</em>). Membahas pembagian keuntungan, risiko kerugian, dan larangan penggunaan modal.
+                    </p>
+                    <div class="bg-white p-3 rounded-lg border-l-2 border-luxury-gold mb-4">
+                        <p class="text-xs text-gray-500 font-semibold uppercase mb-1">Studi Kasus</p>
+                        <p class="text-sm text-gray-700">Penerapan Qirad pada Bank Syariah dan koperasi simpan pinjam: Analisis skema bagi hasil vs bunga tetap.</p>
+                    </div>
+                    <button onclick="openVideo('dQw4w9WgXcQ')" class="w-full flex items-center justify-center gap-2 bg-red-50 text-red-600 py-2 rounded-lg hover:bg-red-100 transition text-sm font-semibold">
+                        <i class="fa-brands fa-youtube"></i> Tonton Video: Akad Qirad
+                    </button>
+                </div>
+
+                <!-- BAB 7 -->
+                <div class="group bg-luxury-cream rounded-2xl p-8 border border-gray-100 hover:border-luxury-gold/50 hover:shadow-2xl transition duration-300">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="bg-luxury-900 text-luxury-gold text-xs font-bold px-3 py-1 rounded-full">Pertemuan 7</span>
+                        <a href="7.html" target="_blank" class="text-gray-400 hover:text-luxury-gold transition" title="Buka Bab 7"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold text-luxury-900 mb-3">Riba</h3>
+                    <p class="text-gray-600 text-sm mb-4 leading-relaxed">
+                        Definisi, dalil pengharaman (QS. Al-Baqarah: 275), dan 4 jenis riba: Riba Fadli, Qardhi, Yad, dan Nasi'ah. Dilengkapi cara menghindari praktik riba di era modern.
+                    </p>
+                    <div class="bg-white p-3 rounded-lg border-l-2 border-luxury-gold mb-4">
+                        <p class="text-xs text-gray-500 font-semibold uppercase mb-1">Tabel Analisis</p>
+                        <p class="text-sm text-gray-700">Perbedaan mendasar Riba Fadli (tukar menukar barang ribawi) dan Riba Qardhi (pinjaman dengan syarat tambah).</p>
+                    </div>
+                    <button onclick="openVideo('dQw4w9WgXcQ')" class="w-full flex items-center justify-center gap-2 bg-red-50 text-red-600 py-2 rounded-lg hover:bg-red-100 transition text-sm font-semibold">
+                        <i class="fa-brands fa-youtube"></i> Tonton Video: Bahaya Riba
+                    </button>
+                </div>
+
+                <!-- BAB 8 (UTS) -->
+                <div class="group bg-luxury-900 rounded-2xl p-8 border border-luxury-gold/50 shadow-2xl transition duration-300 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-luxury-gold/20 rounded-full blur-2xl -mr-10 -mt-10"></div>
+                    <div class="flex justify-between items-start mb-4 relative z-10">
+                        <span class="bg-luxury-gold text-luxury-900 text-xs font-bold px-3 py-1 rounded-full">Pertemuan 8</span>
+                        <a href="8.html" target="_blank" class="text-luxury-goldLight hover:text-white transition" title="Buka Bab 8"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold text-white mb-3 relative z-10">Ujian Tengah Semester & Ariyah</h3>
+                    <p class="text-luxury-goldLight text-sm mb-4 leading-relaxed relative z-10">
+                        Evaluasi komprehensif materi Bab 1-7, dilanjutkan dengan pengantar <strong>Ariyah (Pinjam Meminjam)</strong>. Membahas hukum mubah, sunnah, wajib, hingga haram, serta kewajiban <em>mu'ir</em> dan <em>musta'ir</em>.
+                    </p>
+                    <div class="bg-white/10 p-3 rounded-lg border-l-2 border-luxury-gold mb-4 relative z-10">
+                        <p class="text-xs text-luxury-gold font-semibold uppercase mb-1">Fokus UTS</p>
+                        <p class="text-sm text-white">Tanggung jawab peminjam atas kerusakan barang (misal: bensin motor pinjaman habis) dan batas pemanfaatan.</p>
+                    </div>
+                    <button onclick="openVideo('dQw4w9WgXcQ')" class="w-full flex items-center justify-center gap-2 bg-luxury-gold text-luxury-900 py-2 rounded-lg hover:bg-white transition text-sm font-bold relative z-10">
+                        <i class="fa-solid fa-play"></i> Tonton Video: Review UTS & Ariyah
+                    </button>
+                </div>
+
+                <!-- BAB 9 -->
+                <div class="group bg-luxury-cream rounded-2xl p-8 border border-gray-100 hover:border-luxury-gold/50 hover:shadow-2xl transition duration-300">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="bg-luxury-900 text-luxury-gold text-xs font-bold px-3 py-1 rounded-full">Pertemuan 9</span>
+                        <a href="9.html" target="_blank" class="text-gray-400 hover:text-luxury-gold transition" title="Buka Bab 9"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold text-luxury-900 mb-3">Wadi'ah (Titipan)</h3>
+                    <p class="text-gray-600 text-sm mb-4 leading-relaxed">
+                        Konsep penitipan harta. Analisis mendalam perbedaan <em>Wadi'ah Yad al-Amanah</em> (titipan murni, tidak boleh dipakai) dan <em>Yad ad-Dhamanah</em> (titipan yang boleh dikelola, seperti di Bank Syariah).
+                    </p>
+                    <div class="bg-white p-3 rounded-lg border-l-2 border-luxury-gold mb-4">
+                        <p class="text-xs text-gray-500 font-semibold uppercase mb-1">Studi Kasus</p>
+                        <p class="text-sm text-gray-700">Hukum menggunakan barang titipan (sepatu/motor) tanpa izin pemilik dan konsekuensi ganti rugi jika rusak.</p>
+                    </div>
+                    <button onclick="openVideo('dQw4w9WgXcQ')" class="w-full flex items-center justify-center gap-2 bg-red-50 text-red-600 py-2 rounded-lg hover:bg-red-100 transition text-sm font-semibold">
+                        <i class="fa-brands fa-youtube"></i> Tonton Video: Wadi'ah di Bank Syariah
+                    </button>
+                </div>
+
+                <!-- BAB 10 -->
+                <div class="group bg-luxury-cream rounded-2xl p-8 border border-gray-100 hover:border-luxury-gold/50 hover:shadow-2xl transition duration-300">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="bg-luxury-900 text-luxury-gold text-xs font-bold px-3 py-1 rounded-full">Pertemuan 10</span>
+                        <a href="10.html" target="_blank" class="text-gray-400 hover:text-luxury-gold transition" title="Buka Bab 10"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold text-luxury-900 mb-3">Hutang Piutang (Al-Qard)</h3>
+                    <p class="text-gray-600 text-sm mb-4 leading-relaxed">
+                        Akad tolong menolong (<em>ta'awun</em>). Hukum asal mubah, adab berhutang, larangan mengambil manfaat dari hutang (riba terselubung), dan keutamaan memberi tangguh waktu bagi yang kesulitan.
+                    </p>
+                    <div class="bg-white p-3 rounded-lg border-l-2 border-luxury-gold mb-4">
+                        <p class="text-xs text-gray-500 font-semibold uppercase mb-1">Studi Kasus</p>
+                        <p class="text-sm text-gray-700">Etika menagih hutang yang sopan vs cara zalim, serta hukum diskon pelunasan hutang di awal akad.</p>
+                    </div>
+                    <button onclick="openVideo('dQw4w9WgXcQ')" class="w-full flex items-center justify-center gap-2 bg-red-50 text-red-600 py-2 rounded-lg hover:bg-red-100 transition text-sm font-semibold">
+                        <i class="fa-brands fa-youtube"></i> Tonton Video: Adab Hutang Piutang
+                    </button>
+                </div>
+
+                <!-- BAB 11 -->
+                <div class="group bg-luxury-cream rounded-2xl p-8 border border-gray-100 hover:border-luxury-gold/50 hover:shadow-2xl transition duration-300">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="bg-luxury-900 text-luxury-gold text-xs font-bold px-3 py-1 rounded-full">Pertemuan 11</span>
+                        <a href="11.html" target="_blank" class="text-gray-400 hover:text-luxury-gold transition" title="Buka Bab 11"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold text-luxury-900 mb-3">Gadai (Rahn)</h3>
+                    <p class="text-gray-600 text-sm mb-4 leading-relaxed">
+                        Menahan harta sebagai jaminan hutang. Rukun, syarat, dan ketentuan pemanfaatan barang gadai. Pembahasan khusus tentang biaya perawatan barang gadai.
+                    </p>
+                    <div class="bg-white p-3 rounded-lg border-l-2 border-luxury-gold mb-4">
+                        <p class="text-xs text-gray-500 font-semibold uppercase mb-1">Tabel Analisis</p>
+                        <p class="text-sm text-gray-700">Perbandingan Gadai Syariah (Pegadaian) vs Gadai Konvensional: Tinjauan dari sisi biaya penitipan dan pemanfaatan barang.</p>
+                    </div>
+                    <button onclick="openVideo('dQw4w9WgXcQ')" class="w-full flex items-center justify-center gap-2 bg-red-50 text-red-600 py-2 rounded-lg hover:bg-red-100 transition text-sm font-semibold">
+                        <i class="fa-brands fa-youtube"></i> Tonton Video: Mekanisme Rahn
+                    </button>
+                </div>
+
+                <!-- BAB 12 -->
+                <div class="group bg-luxury-cream rounded-2xl p-8 border border-gray-100 hover:border-luxury-gold/50 hover:shadow-2xl transition duration-300">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="bg-luxury-900 text-luxury-gold text-xs font-bold px-3 py-1 rounded-full">Pertemuan 12</span>
+                        <a href="12.html" target="_blank" class="text-gray-400 hover:text-luxury-gold transition" title="Buka Bab 12"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold text-luxury-900 mb-3">Hiwalah</h3>
+                    <p class="text-gray-600 text-sm mb-4 leading-relaxed">
+                        Pengalihan hutang atau piutang dari satu pihak ke pihak lain. Membahas Hiwalah al-Haq (pemindahan hak tagih) dan Hiwalah ad-Dain (pemindahan kewajiban bayar).
+                    </p>
+                    <div class="bg-white p-3 rounded-lg border-l-2 border-luxury-gold mb-4">
+                        <p class="text-xs text-gray-500 font-semibold uppercase mb-1">Studi Kasus</p>
+                        <p class="text-sm text-gray-700">Penerapan Hiwalah dalam faktur invoice bisnis modern dan jual beli hutang (<em>bay' al-kali bi al-kali</em>) yang terlarang.</p>
+                    </div>
+                    <button onclick="openVideo('dQw4w9WgXcQ')" class="w-full flex items-center justify-center gap-2 bg-red-50 text-red-600 py-2 rounded-lg hover:bg-red-100 transition text-sm font-semibold">
+                        <i class="fa-brands fa-youtube"></i> Tonton Video: Simulasi Akad Hiwalah
+                    </button>
+                </div>
+
+                <!-- BAB 13 -->
+                <div class="group bg-luxury-cream rounded-2xl p-8 border border-gray-100 hover:border-luxury-gold/50 hover:shadow-2xl transition duration-300">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="bg-luxury-900 text-luxury-gold text-xs font-bold px-3 py-1 rounded-full">Pertemuan 13</span>
+                        <a href="13.html" target="_blank" class="text-gray-400 hover:text-luxury-gold transition" title="Buka Bab 13"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold text-luxury-900 mb-3">Ijarah (Sewa & Upah)</h3>
+                    <p class="text-gray-600 text-sm mb-4 leading-relaxed">
+                        Transaksi manfaat (<em>Ijarat ala al-manafi'</em>) dan jasa (<em>Ijarat ala al-mal</em>). Rukun, syarat, dan kewajiban pemberi upah untuk membayar sebelum keringat pekerja kering.
+                    </p>
+                    <div class="bg-white p-3 rounded-lg border-l-2 border-luxury-gold mb-4">
+                        <p class="text-xs text-gray-500 font-semibold uppercase mb-1">Studi Kasus</p>
+                        <p class="text-sm text-gray-700">Hukum sewa menyewa barang yang rusak di tengah masa kontrak dan hak pekerja atas cuti dan jaminan kesehatan.</p>
+                    </div>
+                    <button onclick="openVideo('dQw4w9WgXcQ')" class="w-full flex items-center justify-center gap-2 bg-red-50 text-red-600 py-2 rounded-lg hover:bg-red-100 transition text-sm font-semibold">
+                        <i class="fa-brands fa-youtube"></i> Tonton Video: Akad Ijarah
+                    </button>
+                </div>
+
+                <!-- BAB 14 -->
+                <div class="group bg-luxury-cream rounded-2xl p-8 border border-gray-100 hover:border-luxury-gold/50 hover:shadow-2xl transition duration-300">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="bg-luxury-900 text-luxury-gold text-xs font-bold px-3 py-1 rounded-full">Pertemuan 14</span>
+                        <a href="14.html" target="_blank" class="text-gray-400 hover:text-luxury-gold transition" title="Buka Bab 14"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold text-luxury-900 mb-3">Pengurusan Jenazah: Memandikan & Mengafani</h3>
+                    <p class="text-gray-600 text-sm mb-4 leading-relaxed">
+                        Fardhu kifayah pertama dan kedua. Tata cara memandikan (termasuk <em>ghairu maqdur alaih</em> seperti korban terbakar), syarat kafan, dan perbedaan jumlah lapis kafan laki-laki (3) dan perempuan (5).
+                    </p>
+                    <div class="bg-white p-3 rounded-lg border-l-2 border-luxury-gold mb-4">
+                        <p class="text-xs text-gray-500 font-semibold uppercase mb-1">Studi Kasus</p>
+                        <p class="text-sm text-gray-700">Protokol pengurusan jenazah penderita penyakit menular berbahaya (misal: COVID-19) sesuai fatwa MUI terkini.</p>
+                    </div>
+                    <button onclick="openVideo('dQw4w9WgXcQ')" class="w-full flex items-center justify-center gap-2 bg-red-50 text-red-600 py-2 rounded-lg hover:bg-red-100 transition text-sm font-semibold">
+                        <i class="fa-brands fa-youtube"></i> Tonton Video: Praktik Memandikan Jenazah
+                    </button>
+                </div>
+
+                <!-- BAB 15 -->
+                <div class="group bg-luxury-cream rounded-2xl p-8 border border-gray-100 hover:border-luxury-gold/50 hover:shadow-2xl transition duration-300">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="bg-luxury-900 text-luxury-gold text-xs font-bold px-3 py-1 rounded-full">Pertemuan 15</span>
+                        <a href="15.html" target="_blank" class="text-gray-400 hover:text-luxury-gold transition" title="Buka Bab 15"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold text-luxury-900 mb-3">Pengurusan Jenazah: Mensholatkan & Menguburkan</h3>
+                    <p class="text-gray-600 text-sm mb-4 leading-relaxed">
+                        Rukun shalat jenazah (4 takbir), posisi imam untuk jenazah laki-laki vs perempuan, tata cara menguburkan (liang lahat), serta adab Ta'ziah dan Ziarah Kubur.
+                    </p>
+                    <div class="bg-white p-3 rounded-lg border-l-2 border-luxury-gold mb-4">
+                        <p class="text-xs text-gray-500 font-semibold uppercase mb-1">Tabel Analisis</p>
+                        <p class="text-sm text-gray-700">Perbedaan doa shalat jenazah untuk laki-laki, perempuan, dan shalat jenazah gaib.</p>
+                    </div>
+                    <button onclick="openVideo('dQw4w9WgXcQ')" class="w-full flex items-center justify-center gap-2 bg-red-50 text-red-600 py-2 rounded-lg hover:bg-red-100 transition text-sm font-semibold">
+                        <i class="fa-brands fa-youtube"></i> Tonton Video: Tata Cara Shalat Jenazah
+                    </button>
+                </div>
+
+                <!-- BAB 16 (UAS) -->
+                <div class="group bg-luxury-900 rounded-2xl p-8 border border-luxury-gold/50 shadow-2xl transition duration-300 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-luxury-gold/20 rounded-full blur-2xl -mr-10 -mt-10"></div>
+                    <div class="flex justify-between items-start mb-4 relative z-10">
+                        <span class="bg-luxury-gold text-luxury-900 text-xs font-bold px-3 py-1 rounded-full">Pertemuan 16</span>
+                        <a href="16.html" target="_blank" class="text-luxury-goldLight hover:text-white transition" title="Buka Bab 16"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold text-white mb-3 relative z-10">Ujian Akhir Semester & Warisan</h3>
+                    <p class="text-luxury-goldLight text-sm mb-4 leading-relaxed relative z-10">
+                        Evaluasi akhir pembelajaran, ditutup dengan materi <strong>Ilmu Waris (Faraidh)</strong>. Membahas sebab mewarisi, penghalang waris, Ashabul Furud, Asabah, dan cara menghitung bagian waris.
+                    </p>
+                    <div class="bg-white/10 p-3 rounded-lg border-l-2 border-luxury-gold mb-4 relative z-10">
+                        <p class="text-xs text-luxury-gold font-semibold uppercase mb-1">Fokus UAS</p>
+                        <p class="text-sm text-white">Studi kasus perhitungan waris kontemporer: Pembagian harta ketika terdapat anak laki-laki, perempuan, dan istri, serta penyelesaian hutang almarhum sebelum pembagian.</p>
+                    </div>
+                    <button onclick="openVideo('dQw4w9WgXcQ')" class="w-full flex items-center justify-center gap-2 bg-luxury-gold text-luxury-900 py-2 rounded-lg hover:bg-white transition text-sm font-bold relative z-10">
+                        <i class="fa-solid fa-play"></i> Tonton Video: Cara Menghitung Waris
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Penulis Section -->
+    <section id="penulis" class="py-20 bg-luxury-cream">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-3xl shadow-xl p-8 lg:p-12 border border-luxury-gold/20 flex flex-col md:flex-row items-center gap-10">
+                <div class="w-48 h-48 lg:w-64 lg:h-64 flex-shrink-0 relative">
+                    <div class="absolute inset-0 bg-luxury-gold rounded-full blur opacity-20"></div>
+                    <!-- GANTI FILE INI DENGAN FOTO PENULIS ANDA -->
+                    <img src="photo-penulis.jpg" alt="Maria Ulfa, M.A." class="relative w-full h-full object-cover rounded-full border-4 border-luxury-gold shadow-lg" onerror="this.src='https://placehold.co/400x400/064E3B/D4AF37?text=PHOTO+PENULIS'">
+                </div>
+                <div class="text-center md:text-left flex-1">
+                    <h2 class="font-serif text-3xl lg:text-4xl font-bold text-luxury-900 mb-2">Maria Ulfa, M.A.</h2>
+                    <p class="text-luxury-gold font-semibold mb-4">Penulis & Pendidik Fikih Muamalah</p>
+                    <p class="text-gray-600 leading-relaxed mb-6">
+                        Seorang akademisi dan praktisi pendidikan Islam yang berdedikasi di <strong>MTsS Diniyah Limo Jurai</strong>. Dengan latar belakang Magister Agama (M.A.), beliau memiliki keahlian mendalam dalam menyederhanakan konsep-konsep Fikih yang kompleks menjadi materi yang mudah dipahami, relevan dengan konteks kehidupan modern, dan tetap berpegang teguh pada dalil-dalil yang shahih. Buku ini adalah wujud dedikasinya untuk mencetak generasi Muslim yang paham agama secara moderat dan aplikatif.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                        <a href="mailto:ummisalwa82@gmail.com" class="flex items-center justify-center gap-2 text-luxury-900 hover:text-luxury-gold transition font-medium">
+                            <i class="fa-solid fa-envelope"></i> ummisalwa82@gmail.com
+                        </a>
+                        <span class="hidden sm:block text-gray-300">|</span>
+                        <span class="flex items-center justify-center gap-2 text-gray-600">
+                            <i class="fa-solid fa-school"></i> MTsS Diniyah Limo Jurai
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Referensi Section -->
+    <section id="referensi" class="py-20 bg-luxury-900 text-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="font-serif text-3xl font-bold text-luxury-gold mb-4">Daftar Referensi Utama</h2>
+                <p class="text-gray-300">Materi diperkaya dan diverifikasi berdasarkan sumber-sumber otoritatif dan terkini.</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white/5 p-6 rounded-xl border border-white/10 hover:border-luxury-gold/50 transition">
+                    <h4 class="font-serif text-xl font-bold text-luxury-gold mb-2">Fikih Muamalah Kontemporer</h4>
+                    <p class="text-sm text-gray-300">Oni Sahroni & M. Syafi'i Antonio. (2021). Jakarta: Gema Insani Press.</p>
+                    <p class="text-xs text-gray-400 mt-2">Digunakan untuk analisis kasus Qirad, Hiwalah, dan Riba di era digital.</p>
+                </div>
+                <div class="bg-white/5 p-6 rounded-xl border border-white/10 hover:border-luxury-gold/50 transition">
+                    <h4 class="font-serif text-xl font-bold text-luxury-gold mb-2">Hukum Waris Islam: Ditinjau dari Perspektif Hukum Perdata & Fikih</h4>
+                    <p class="text-sm text-gray-300">Amir Syarifuddin. (2022). Jakarta: Kencana Prenada Media Group.</p>
+                    <p class="text-xs text-gray-400 mt-2">Referensi utama untuk perhitungan Faraidh dan studi kasus waris modern.</p>
+                </div>
+                <div class="bg-white/5 p-6 rounded-xl border border-white/10 hover:border-luxury-gold/50 transition">
+                    <h4 class="font-serif text-xl font-bold text-luxury-gold mb-2">Fikih Sunnah (Terjemahan)</h4>
+                    <p class="text-sm text-gray-300">Sayyid Sabiq. (Cetakan Terbaru, 2020). Bandung: Al-Ma'arif.</p>
+                    <p class="text-xs text-gray-400 mt-2">Rujukan klasik yang tetap relevan untuk bab Penyembelihan, Kurban, dan Jenazah.</p>
+                </div>
+                <div class="bg-white/5 p-6 rounded-xl border border-white/10 hover:border-luxury-gold/50 transition">
+                    <h4 class="font-serif text-xl font-bold text-luxury-gold mb-2">Fathul Qarib al-Mujib</h4>
+                    <p class="text-sm text-gray-300">Syekh Muhammad bin Qasim al-Ghazy. (Terj. 2019). Surabaya: Al-Miftah.</p>
+                    <p class="text-xs text-gray-400 mt-2">Kitab muktabar Mazhab Syafi'i sebagai dasar hukum syarat dan rukun akad.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-luxury-dark text-gray-400 py-12 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-center md:text-left">
+                <span class="font-serif text-2xl font-bold text-white tracking-wide">Fikih<span class="text-luxury-gold">IX</span></span>
+                <p class="text-sm mt-2">© 2024 Maria Ulfa, M.A. - MTsS Diniyah Limo Jurai.</p>
+                <p class="text-sm">Hak Cipta Dilindungi Undang-Undang.</p>
+            </div>
+            <div class="flex gap-6">
+                <a href="mailto:ummisalwa82@gmail.com" class="hover:text-luxury-gold transition"><i class="fa-solid fa-envelope text-xl"></i></a>
+                <a href="#" class="hover:text-luxury-gold transition"><i class="fa-brands fa-instagram text-xl"></i></a>
+                <a href="#" class="hover:text-luxury-gold transition"><i class="fa-brands fa-youtube text-xl"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Video Modal Script -->
+    <div id="videoModal" class="fixed inset-0 z-[100] hidden bg-black/90 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="relative w-full max-w-4xl bg-black rounded-2xl overflow-hidden shadow-2xl border border-luxury-gold/30">
+            <button onclick="closeVideo()" class="absolute top-4 right-4 text-white hover:text-luxury-gold z-10 bg-black/50 rounded-full p-2 w-10 h-10 flex items-center justify-center transition">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+            <div class="aspect-video w-full">
+                <iframe id="videoFrame" class="w-full h-full" src="" title="Video Pembelajaran" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Fungsi untuk membuka modal video
+        // CARA MENGGANTI LINK VIDEO: 
+        // Ubah parameter 'videoId' di setiap tombol onclick="openVideo('ID_VIDEO_DISINI')"
+        // Contoh: Jika link YouTube adalah https://www.youtube.com/watch?v=dQw4w9WgXcQ, maka ID-nya adalah 'dQw4w9WgXcQ'
+        function openVideo(videoId) {
+            const modal = document.getElementById('videoModal');
+            const iframe = document.getElementById('videoFrame');
+            // Menggunakan format embed YouTube
+            iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Mencegah scroll background
+        }
+
+        // Fungsi untuk menutup modal video
+        function closeVideo() {
+            const modal = document.getElementById('videoModal');
+            const iframe = document.getElementById('videoFrame');
+            iframe.src = ''; // Menghentikan video
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto'; // Mengembalikan scroll
+        }
+
+        // Menutup modal jika user klik di luar area video
+        document.getElementById('videoModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeVideo();
+            }
+        });
+
+        // Menutup modal dengan tombol ESC
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeVideo();
+            }
+        });
+    </script>
+</body>
+</html>
