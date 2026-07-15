@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uji Formatif Bab 2 - Kurban | Fikih Kelas IX</title>
+    
+    <!-- html2pdf.js untuk fungsi Unduh PDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    
+    <style>
+        :root {
+            --luxury-900: #064E3B;
+            --luxury-800: #065F46;
+            --luxury-gold: #D4AF37;
+            --luxury-cream: #FAF9F6;
+            --luxury-dark: #1C1917;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--luxury-dark);
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: var(--luxury-cream);
+        }
+        header {
+            border-bottom: 3px solid var(--luxury-gold);
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+        nav a {
+            color: var(--luxury-900);
+            text-decoration: none;
+            font-weight: 600;
+            margin-right: 15px;
+            font-size: 0.95em;
+        }
+        nav a:hover {
+            color: var(--luxury-gold);
+            text-decoration: underline;
+        }
+        h1 {
+            color: var(--luxury-900);
+            font-size: 1.8em;
+            margin-top: 0;
+            border-left: 5px solid var(--luxury-gold);
+            padding-left: 15px;
+        }
+        h2 {
+            color: var(--luxury-800);
+            border-bottom: 2px solid var(--luxury-gold);
+            padding-bottom: 8px;
+            margin-top: 30px;
+            font-size: 1.3em;
+        }
+        .info-box {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .info-box strong {
+            color: var(--luxury-900);
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: var(--luxury-900);
+        }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            font-size: 1em;
+            box-sizing: border-box;
+        }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--luxury-gold);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+        }
+        .question-block {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid var(--luxury-gold);
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+        }
+        .question-text {
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--luxury-dark);
+        }
+        .options label {
+            display: block;
+            margin-bottom: 8px;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+        .options label:hover {
+            background-color: #f3f4f6;
+        }
+        .options input[type="radio"] {
+            margin-right: 10px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            margin: 5px;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.3s;
+            font-size: 0.95em;
+        }
+        .btn-primary {
+            background-color: var(--luxury-900);
+            color: white;
+        }
+        .btn-primary:hover {
+            background-color: var(--luxury-800);
+        }
+        .btn-secondary {
+            background-color: white;
+            color: var(--luxury-900);
+            border: 2px solid var(--luxury-900);
+        }
+        .btn-secondary:hover {
+            background-color: var(--luxury-cream);
+        }
+        .btn-success {
+            background-color: var(--luxury-gold);
+            color: var(--luxury-900);
+        }
+        .btn-success:hover {
+            background-color: #b8962e;
+            color: white;
+        }
+        .result-box {
+            display: none;
+            background-color: var(--luxury-900);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: 30px;
+            text-align: center;
+            border: 2px solid var(--luxury-gold);
+        }
+        .result-box h3 {
+            margin-top: 0;
+            color: var(--luxury-gold);
+            font-size: 1.5em;
+        }
+        .score-display {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: var(--luxury-gold);
+            margin: 15px 0;
+        }
+        .action-buttons {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+        .warning {
+            color: #dc2626;
+            font-weight: 600;
+            font-size: 0.9em;
+            margin-bottom: 15px;
+        }
+        footer {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 2px solid var(--luxury-gold);
+            font-size: 0.9em;
+            color: #6b7280;
+            text-align: center;
+        }
+        footer a {
+            color: var(--luxury-900);
+            text-decoration: none;
+        }
+        @media print {
+            .no-print { display: none !important; }
+            body { background: white; }
+            .question-block { break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="index.html">Fikih Kelas IX</a> | 
+            <a href="index.html">Beranda</a> | 
+            <a href="2.html">Materi Bab 2</a> | 
+            <a href="3.html">Bab Selanjutnya</a>
+        </nav>
+    </header>
+
+    <main id="quiz-content">
+        <h1>📋 Uji Formatif Bab 2<br><span style="font-size: 0.7em; font-weight: 400; color: #4b5563;">Kurban</span></h1>
+        
+        <div class="info-box">
+            <p><strong>📚 Materi:</strong> Pengertian kurban, dasar hukum, ketentuan hewan kurban (jenis, usia, cacat), waktu dan tempat penyembelihan, sunnah, pembagian daging, dan hikmah kurban.</p>
+            <p><strong>⏱️ Waktu:</strong> Tidak terbatas | <strong>🎯 Total Skor:</strong> 200 poin (Pilihan Ganda: 100, Essay: 100)</p>
+            <p class="warning">⚠️ Harap lengkapi Nama Lengkap dan NIS terlebih dahulu sebelum mengerjakan!</p>
+        </div>
+
+        <form id="quizForm">
+            <h2>📋 Data Siswa</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                <div class="form-group">
+                    <label for="nama">Nama Lengkap *</label>
+                    <input type="text" id="nama" name="nama" required placeholder="Masukkan nama lengkap">
+                </div>
+                <div class="form-group">
+                    <label for="nis">NIS *</label>
+                    <input type="text" id="nis" name="nis" required placeholder="Masukkan Nomor Induk Siswa">
+                </div>
+                <div class="form-group">
+                    <label for="tanggal">Tanggal Ujian *</label>
+                    <input type="date" id="tanggal" name="tanggal" required>
+                </div>
+                <div class="form-group">
+                    <label for="kelas">Kelas *</label>
+                    <select id="kelas" name="kelas" required>
+                        <option value="">Pilih Kelas</option>
+                        <option value="VII">Kelas VII</option>
+                        <option value="VIII">Kelas VIII</option>
+                        <option value="IX">Kelas IX</option>
+                    </select>
+                </div>
+            </div>
+
+            <h2>📋 Bagian A – Pilihan Ganda</h2>
+            <p class="warning">⚠️ Lengkapi semua 10 soal pilihan ganda! Setiap soal bernilai 10 poin.</p>
+
+            <!-- Soal 1 -->
+            <div class="question-block">
+                <div class="question-text">1. Secara etimologis, kata "kurban" berasal dari bahasa Arab <em>"Qariba-Yaqrabu-Qurbanan"</em> yang berarti...</div>
+                <div class="options">
+                    <label><input type="radio" name="q1" value="a"> a) Jauh dari dosa</label>
+                    <label><input type="radio" name="q1" value="b"> b) Dekat (dengan Allah Swt.)</label>
+                    <label><input type="radio" name="q1" value="c"> c) Menyembelih hewan</label>
+                    <label><input type="radio" name="q1" value="d"> d) Memberi sedekah</label>
+                </div>
+            </div>
+
+            <!-- Soal 2 -->
+            <div class="question-block">
+                <div class="question-text">2. Menurut jumhur ulama Syafi'iyyah, hukum berkurban bagi muslim yang mampu adalah...</div>
+                <div class="options">
+                    <label><input type="radio" name="q2" value="a"> a) Fardhu 'Ain</label>
+                    <label><input type="radio" name="q2" value="b"> b) Fardhu Kifayah</label>
+                    <label><input type="radio" name="q2" value="c"> c) Sunnah Mu'akkad</label>
+                    <label><input type="radio" name="q2" value="d"> d) Mubah</label>
+                </div>
+            </div>
+
+            <!-- Soal 3 -->
+            <div class="question-block">
+                <div class="question-text">3. Dalil utama tentang ibadah kurban terdapat dalam Al-Qur'an surah...</div>
+                <div class="options">
+                    <label><input type="radio" name="q3" value="a"> a) Al-Baqarah: 196</label>
+                    <label><input type="radio" name="q3" value="b"> b) Al-Kautsar: 1-3</label>
+                    <label><input type="radio" name="q3" value="c"> c) Al-Maidah: 3</label>
+                    <label><input type="radio" name="q3" value="d"> d) An-Nisa: 11</label>
+                </div>
+            </div>
+
+            <!-- Soal 4 -->
+            <div class="question-block">
+                <div class="question-text">4. Hewan yang termasuk golongan <em>Bahimatul An'aam</em> dan sah dijadikan kurban adalah...</div>
+                <div class="options">
+                    <label><input type="radio" name="q4" value="a"> a) Ayam, bebek, dan kalkun</label>
+                    <label><input type="radio" name="q4" value="b"> b) Unta, sapi, kerbau, kambing, dan domba</label>
+                    <label><input type="radio" name="q4" value="c"> c) Kuda, rusa, dan kijang</label>
+                    <label><input type="radio" name="q4" value="d"> d) Kelinci, ikan, dan burung</label>
+                </div>
+            </div>
+
+            <!-- Soal 5 -->
+            <div class="question-block">
+                <div class="question-text">5. Syarat minimal usia sapi atau kerbau yang sah dijadikan hewan kurban adalah...</div>
+                <div class="options">
+                    <label><input type="radio" name="q5" value="a"> a) 1 tahun memasuki 2 tahun</label>
+                    <label><input type="radio" name="q5" value="b"> b) 2 tahun memasuki 3 tahun</label>
+                    <label><input type="radio" name="q5" value="c"> c) 5 tahun memasuki 6 tahun</label>
+                    <label><input type="radio" name="q5" value="d"> d) 3 tahun memasuki 4 tahun</label>
+                </div>
+            </div>
+
+            <!-- Soal 6 -->
+            <div class="question-block">
+                <div class="question-text">6. Berikut ini yang termasuk cacat yang menyebabkan hewan <strong>TIDAK SAH</strong> dijadikan kurban adalah...</div>
+                <div class="options">
+                    <label><input type="radio" name="q6" value="a"> a) Tanduknya patah sebagian</label>
+                    <label><input type="radio" name="q6" value="b"> b) Bulunya tidak putih bersih</label>
+                    <label><input type="radio" name="q6" value="c"> c) Buta yang jelas</label>
+                    <label><input type="radio" name="q6" value="d"> d) Telinganya sobek sedikit karena kecelakaan</label>
+                </div>
+            </div>
+
+            <!-- Soal 7 -->
+            <div class="question-block">
+                <div class="question-text">7. Waktu yang sah untuk menyembelih hewan kurban adalah...</div>
+                <div class="options">
+                    <label><input type="radio" name="q7" value="a"> a) Sebelum shalat Idul Adha tanggal 10 Zulhijjah</label>
+                    <label><input type="radio" name="q7" value="b"> b) Setelah shalat Idul Adha tanggal 10 Zulhijjah hingga 13 Zulhijjah sebelum Maghrib</label>
+                    <label><input type="radio" name="q7" value="c"> c) Sepanjang bulan Zulhijjah</label>
+                    <label><input type="radio" name="q7" value="d"> d) Setelah Maghrib tanggal 13 Zulhijjah</label>
+                </div>
+            </div>
+
+            <!-- Soal 8 -->
+            <div class="question-block">
+                <div class="question-text">8. Pembagian daging kurban yang sesuai syariat adalah...</div>
+                <div class="options">
+                    <label><input type="radio" name="q8" value="a"> a) Semua untuk fakir miskin</label>
+                    <label><input type="radio" name="q8" value="b"> b) 1/3 untuk pemilik, 1/3 fakir miskin, 1/3 tetangga (dalam kondisi mentah)</label>
+                    <label><input type="radio" name="q8" value="c"> c) 1/2 untuk pemilik, 1/2 untuk fakir miskin (dalam kondisi matang)</label>
+                    <label><input type="radio" name="q8" value="d"> d) Semua untuk pemilik dan keluarganya</label>
+                </div>
+            </div>
+
+            <!-- Soal 9 -->
+            <div class="question-block">
+                <div class="question-text">9. Bagi orang yang berniat berkurban, larangan yang berlaku sejak masuk tanggal 1 Zulhijjah hingga hewan disembelih adalah...</div>
+                <div class="options">
+                    <label><input type="radio" name="q9" value="a"> a) Tidak boleh makan dan minum</label>
+                    <label><input type="radio" name="q9" value="b"> b) Tidak boleh memotong rambut dan kuku</label>
+                    <label><input type="radio" name="q9" value="c"> c) Tidak boleh bepergian</label>
+                    <label><input type="radio" name="q9" value="d"> d) Tidak boleh berbicara kecuali dzikir</label>
+                </div>
+            </div>
+
+            <!-- Soal 10 -->
+            <div class="question-block">
+                <div class="question-text">10. Salah satu hikmah ibadah kurban adalah...</div>
+                <div class="options">
+                    <label><input type="radio" name="q10" value="a"> a) Menunjukkan kekayaan kepada tetangga</label>
+                    <label><input type="radio" name="q10" value="b"> b) Menghidupkan syariat Nabi Ibrahim As. dan menjalin kasih sayang antar sesama</label>
+                    <label><input type="radio" name="q10" value="c"> c) Menghabiskan harta agar tidak terkena zakat</label>
+                    <label><input type="radio" name="q10" value="d"> d) Menggugurkan kewajiban shalat</label>
+                </div>
+            </div>
+
+            <h2>✍️ Bagian B – Essay</h2>
+            <p class="warning">⚠️ Setiap soal essay bernilai 20 poin. Jawablah dengan jelas dan sistematis!</p>
+
+            <div class="question-block">
+                <div class="question-text">Soal Essay 1</div>
+                <p>Jelaskan pengertian kurban secara etimologi dan terminologi, serta sebutkan dalil Al-Qur'an dan Hadis tentang kurban!</p>
+                <textarea name="essay1" rows="4" placeholder="Tulis jawaban Anda di sini..."></textarea>
+            </div>
+
+            <div class="question-block">
+                <div class="question-text">Soal Essay 2</div>
+                <p>Sebutkan dan jelaskan 4 jenis cacat yang menyebabkan hewan tidak sah dijadikan kurban menurut hadis Rasulullah Saw.!</p>
+                <textarea name="essay2" rows="4" placeholder="Tulis jawaban Anda di sini..."></textarea>
+            </div>
+
+            <div class="question-block">
+                <div class="question-text">Soal Essay 3</div>
+                <p>Jelaskan waktu pelaksanaan penyembelihan hewan kurban yang sah menurut syariat, beserta dalilnya!</p>
+                <textarea name="essay3" rows="4" placeholder="Tulis jawaban Anda di sini..."></textarea>
+            </div>
+
+            <div class="question-block">
+                <div class="question-text">Soal Essay 4</div>
+                <p>Bagaimana tata cara pembagian daging kurban yang sesuai syariat? Sebutkan larangan-larangan terkait daging kurban!</p>
+                <textarea name="essay4" rows="5" placeholder="Tulis jawaban Anda di sini..."></textarea>
+            </div>
+
+            <div class="question-block">
+                <div class="question-text">Soal Essay 5</div>
+                <p>Pak Ahmad tinggal di Jakarta dan ingin berkurban di kampung halamannya di desa. Ia menggunakan aplikasi dompet digital untuk membeli dan menyalurkan hewan kurban melalui lembaga terpercaya. Analisis hukum kurban online tersebut menurut perspektif Fikih!</p>
+                <textarea name="essay5" rows="5" placeholder="Tulis jawaban Anda di sini..."></textarea>
+            </div>
+
+            <div class="no-print" style="text-align: center; margin-top: 30px;">
+                <button type="button" class="btn btn-primary" onclick="submitQuiz()">✉️ KIRIM JAWABAN & LIHAT HASIL</button>
+            </div>
+        </form>
+
+        <!-- Hasil Uji Formatif -->
+        <div id="resultSection" class="result-box">
+            <h3>📊 Hasil Uji Formatif</h3>
+            <p>Terima kasih telah menyelesaikan uji formatif ini, <span id="resultName"></span>!</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin: 20px 0;">
+                <div style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 8px;">
+                    <div style="font-size: 0.9em;">Skor Pilihan Ganda</div>
+                    <div class="score-display" id="scorePG" style="font-size: 1.8em; margin: 10px 0;">0/100</div>
+                </div>
+                <div style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 8px;">
+                    <div style="font-size: 0.9em;">Skor Essay</div>
+                    <div class="score-display" style="font-size: 1.8em; margin: 10px 0; color: #fbbf24;">Menunggu Penilaian Guru</div>
+                    <div style="font-size: 0.8em;">(Maks. 100)</div>
+                </div>
+                <div style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 8px;">
+                    <div style="font-size: 0.9em;">Total Skor Sementara</div>
+                    <div class="score-display" id="scoreTotal" style="font-size: 1.8em; margin: 10px 0;">0/200</div>
+                </div>
+            </div>
+
+            <p style="font-size: 0.9em; font-style: italic; margin-bottom: 20px;">
+                *Catatan: Skor Essay akan dinilai secara manual oleh guru berdasarkan kelengkapan dan ketepatan jawaban.
+            </p>
+
+            <div class="action-buttons no-print">
+                <button class="btn btn-success" onclick="downloadPDF()">📥 UNDUH PDF LENGKAP</button>
+                <button class="btn btn-secondary" onclick="downloadScoreOnly()">📊 UNDUH SKOR SAJA</button>
+                <button class="btn btn-primary" onclick="sendEmail()">✉️ KIRIM EMAIL KE GURU</button>
+                <button class="btn btn-secondary" onclick="resetQuiz()">🔄 MULAI ULANG</button>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <h3 style="color: var(--luxury-900);">Fikih Kelas IX</h3>
+        <p>Buku daras untuk siswa MTs. Teori, praktik, dan aplikasi dalam kehidupan sehari-hari berlandaskan syariat Islam.</p>
+        
+        <p><strong>Navigasi:</strong><br>
+            <a href="index.html">Beranda</a> | 
+            <a href="index.html#tentang">Tentang Buku</a> | 
+            <a href="index.html#bab">Daftar Bab</a> | 
+            <a href="index.html#penulis">Penulis</a>
+        </p>
+        
+        <p><strong>Kontak:</strong><br>
+            <a href="mailto:ummisalwa82@gmail.com">ummisalwa82@gmail.com</a><br>
+            MTsS Diniyah Limo Jurai
+        </p>
+        
+        <p>&copy; 2024 Maria Ulfa, M.A. Hak cipta dilindungi undang-undang.</p>
+    </footer>
+
+    <script>
+        // Kunci Jawaban Pilihan Ganda
+        const correctAnswers = {
+            q1: 'b',
+            q2: 'c',
+            q3: 'b',
+            q4: 'b',
+            q5: 'b',
+            q6: 'c',
+            q7: 'b',
+            q8: 'b',
+            q9: 'b',
+            q10: 'b'
+        };
+
+        function submitQuiz() {
+            const nama = document.getElementById('nama').value;
+            const nis = document.getElementById('nis').value;
+            
+            if (!nama || !nis) {
+                alert('⚠️ Harap lengkapi Nama Lengkap dan NIS terlebih dahulu!');
+                return;
+            }
+
+            let pgScore = 0;
+            let answeredCount = 0;
+
+            // Hitung Skor Pilihan Ganda
+            for (let i = 1; i <= 10; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                if (selected) {
+                    answeredCount++;
+                    if (selected.value === correctAnswers[`q${i}`]) {
+                        pgScore += 10;
+                    }
+                }
+            }
+
+            if (answeredCount < 10) {
+                const confirmSubmit = confirm(`⚠️ Anda baru menjawab ${answeredCount} dari 10 soal pilihan ganda. Yakin ingin mengumpulkan?`);
+                if (!confirmSubmit) return;
+            }
+
+            // Tampilkan Hasil
+            document.getElementById('resultName').textContent = nama;
+            document.getElementById('scorePG').textContent = pgScore + '/100';
+            document.getElementById('scoreTotal').textContent = pgScore + '/200';
+            
+            const resultSection = document.getElementById('resultSection');
+            resultSection.style.display = 'block';
+            
+            // Scroll ke hasil
+            resultSection.scrollIntoView({ behavior: 'smooth' });
+            
+            // Disable form agar tidak diubah setelah submit
+            const inputs = document.querySelectorAll('#quizForm input, #quizForm select, #quizForm textarea');
+            inputs.forEach(input => input.disabled = true);
+            
+            // Sembunyikan tombol submit
+            document.querySelector('#quizForm .no-print button').style.display = 'none';
+        }
+
+        function downloadPDF() {
+            const element = document.getElementById('quiz-content');
+            const nama = document.getElementById('nama').value || 'Siswa';
+            const opt = {
+                margin: 10,
+                filename: `Uji_Formatif_Bab2_${nama.replace(/\s+/g, '_')}.pdf`,
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2 },
+                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            };
+            
+            const btn = event.target;
+            const originalText = btn.textContent;
+            btn.textContent = '⏳ Memproses PDF...';
+            btn.disabled = true;
+
+            html2pdf().set(opt).from(element).save().then(() => {
+                btn.textContent = originalText;
+                btn.disabled = false;
+            });
+        }
+
+        function downloadScoreOnly() {
+            const nama = document.getElementById('nama').value || 'Siswa';
+            const nis = document.getElementById('nis').value || '-';
+            const pgScore = document.getElementById('scorePG').textContent;
+            const totalScore = document.getElementById('scoreTotal').textContent;
+            const tanggal = document.getElementById('tanggal').value || new Date().toLocaleDateString('id-ID');
+
+            const scoreText = `
+HASIL UJI FORMATIF BAB 2 - KURBAN
+Nama: ${nama}
+NIS: ${nis}
+Tanggal: ${tanggal}
+Kelas: ${document.getElementById('kelas').value}
+
+Skor Pilihan Ganda: ${pgScore}
+Skor Essay: Menunggu Penilaian Guru (Maks. 100)
+Total Skor Sementara: ${totalScore}
+
+Dokumen ini digenerate secara otomatis dari sistem Uji Formatif Fikih Kelas IX.
+            `;
+
+            const blob = new Blob([scoreText], { type: 'text/plain' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `Skor_Uji_Formatif_Bab2_${nama.replace(/\s+/g, '_')}.txt`;
+            document.body.appendChild(a);
+            a.click();
+            window.URL.revokeObjectURL(url);
+            document.body.removeChild(a);
+        }
+
+        function sendEmail() {
+            const nama = document.getElementById('nama').value;
+            const nis = document.getElementById('nis').value;
+            const kelas = document.getElementById('kelas').value;
+            const pgScore = document.getElementById('scorePG').textContent;
+            
+            const subject = `Hasil Uji Formatif Bab 2 (Kurban) - ${nama} (${nis})`;
+            const body = `Yth. Bapak/Ibu Guru Fikih,\n\nBerikut adalah hasil uji formatif saya untuk Bab 2 (Kurban):\n\nNama: ${nama}\nNIS: ${nis}\nKelas: ${kelas}\nSkor Pilihan Ganda: ${pgScore}\n\nSaya telah menyelesaikan Bagian A (Pilihan Ganda) dan Bagian B (Essay). Mohon penilaian untuk bagian Essay.\n\nTerima kasih.\n\nHormat saya,\n${nama}`;
+            
+            window.location.href = `mailto:ummisalwa82@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        }
+
+        function resetQuiz() {
+            if (confirm('⚠️ Apakah Anda yakin ingin memulai ulang? Semua jawaban yang telah diisi akan hilang.')) {
+                location.reload();
+            }
+        }
+
+        // Set tanggal hari ini secara otomatis
+        document.addEventListener('DOMContentLoaded', () => {
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('tanggal').value = today;
+        });
+    </script>
+</body>
+</html>
